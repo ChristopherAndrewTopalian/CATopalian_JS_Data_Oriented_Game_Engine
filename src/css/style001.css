@@ -5,6 +5,10 @@ body
     margin: 0px;
     font-family: Arial;
 
+    /* Firefox Specification */
+    scrollbar-width: thin; 
+    scrollbar-color: rgb(0,0,150) rgb(0,0,0); /* Thumb color, Track color */
+
     /*
     background-image: url('../../src/media/textures/sky/sky_clouds_001.jpg');
 
@@ -15,6 +19,31 @@ body
 
     background-color: rgb(34, 202, 248);
     color: rgb(255, 255, 255);
+}
+
+/* Chrome, Edge, and Safari (Webkit) Scrollbar */
+
+/* The overall width of the scrollbar */
+::-webkit-scrollbar {
+    width: 8px;  /* Keeps it nice and narrow for vertical scrolls */
+    height: 8px; /* For horizontal scrolls */
+}
+
+/* The background track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #141414; /* Deep black/gray */
+    border-radius: 10px; /* Smooth edges */
+}
+
+/* The draggable thumb */
+::-webkit-scrollbar-thumb {
+    background: #0b3d91; /* Dark blue */
+    border-radius: 10px; 
+}
+
+/* Hover effect for the thumb to make it feel responsive */
+::-webkit-scrollbar-thumb:hover {
+    background: #155bb5; /* Slightly brighter blue on hover */
 }
 
 button
@@ -89,6 +118,38 @@ button:active
 #distanceBox
 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1.0);
+}
+
+details
+{
+    color: rgb(255, 255, 255);
+}
+
+summary
+{
+    color: rgb(255, 255, 255);
+}
+
+summary:hover
+{
+    color: rgb(0, 255, 255);
+}
+
+details > summary
+{
+    list-style: none; /* remove default triangle */
+    cursor: pointer;
+}
+
+details > summary::before
+{
+    content: '▶️ '; /* closed icon */
+}
+
+details[open] > summary::before
+{
+    content: '🔽 '; /* open icon */
+    /*background-color: rgb(140,140,140);*/
 }
 
 /*----*/
