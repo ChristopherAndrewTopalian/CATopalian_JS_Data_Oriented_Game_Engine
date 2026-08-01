@@ -377,6 +377,7 @@ function makeInterface()
 
         // Generate strings for paths and IDs
         let paddedTexNum = String(randomIndex + 1).padStart(3, '0'); 
+
         let randomTexturePath = `src/media/textures/drones/drone_${paddedTexNum}.webp`;
 
         let uniqueCount = world.length + 1;
